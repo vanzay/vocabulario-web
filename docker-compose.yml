@@ -1,0 +1,11 @@
+services:
+  web-app:
+    image: "vocabulario/web:${VERSION}"
+    container_name: "vocabulario-web"
+    restart: unless-stopped
+    build:
+      context: .
+      args:
+        VERSION: "${VERSION}"
+    ports:
+      - "3000:3000"
